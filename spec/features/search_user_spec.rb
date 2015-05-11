@@ -1,6 +1,6 @@
 require 'rails_helper'
 
-feature 'user searches for other users' do
+feature 'list of languages' do
   context 'with languages in the database' do
     before do
       language_names = %w(Ruby FORTRAN Lisp BASIC)
@@ -15,6 +15,15 @@ feature 'user searches for other users' do
       expect(page).to have_link 'FORTRAN'
       expect(page).to have_link 'Lisp'
       expect(page).to have_link 'BASIC'
+    end
+  end
+
+  context 'without languages in the database' do
+    scenario 'add a language to the list' do
+      visit '/languages/new'
+      fill_in 'Name', with: 'Ruby'
+      click_button 'Add'
+      expect(page).to have_link 'Ruby'
     end
   end
 end
