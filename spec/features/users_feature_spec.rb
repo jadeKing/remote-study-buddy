@@ -8,4 +8,21 @@ feature 'User management system' do
       expect(page).to have_link 'Sign up'
     end
   end
+
+  context 'user is signed in' do
+    before do
+      visit '/'
+      click_link 'Sign up'
+      fill_in 'Email', with: 'somebody@someplace.ie'
+      fill_in 'Password', with: 'moomoocow'
+      fill_in 'Password confirmation', with: 'moomoocow'
+      click_button 'Sign up'
+    end
+
+    scenario 'user logs out' do
+      click_link 'Logout'
+      expect(page).to have_content 'Goodbye'
+      expect(page).not_to have_content 'Logout'
+    end
+  end
 end
