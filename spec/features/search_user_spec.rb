@@ -35,7 +35,7 @@ feature 'list of languages' do
       visit '/'
       click_link 'My Profile'
       click_link 'Add Language'
-      click_link 'Add Ruby'
+      click_button 'Add Ruby'
     end
 
     scenario 'show users learning a particular language' do

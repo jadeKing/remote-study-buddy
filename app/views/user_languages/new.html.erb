@@ -1,3 +1,6 @@
 <%= Language.all.each do |language| %>
-  <%= link_to "Add #{language.name}", user_languages_path(language), method: :post %>
+  <%= form_for UserLanguage.new do |f| %>
+    <%= hidden_field_tag :language_id, language.id %>
+    <%= submit_tag "Add #{language.name}" %>
+  <% end %>
 <% end %>

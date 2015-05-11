@@ -13,4 +13,8 @@ class LanguagesController < ApplicationController
   def language_params
     params.require(:language).permit(:name)
   end
+
+  def show
+    @language_users = Language.find(params[:id]).users
+  end
 end
