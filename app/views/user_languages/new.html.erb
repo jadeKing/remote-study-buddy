@@ -1,4 +1,4 @@
-<%= Language.all.each do |language| %>
+<% Language.all.each do |language| %>
   <%= form_for UserLanguage.new do |f| %>
     <%= hidden_field_tag :language_id, language.id %>
     <%= submit_tag "Add #{language.name}" %>
