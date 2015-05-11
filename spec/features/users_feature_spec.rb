@@ -21,8 +21,8 @@ feature 'User management system' do
 
     scenario 'user logs out' do
       click_link 'Logout'
-      expect(page).to have_content 'Goodbye'
-      expect(page).not_to have_content 'Logout'
+      expect(page).to have_content 'Signed out successfully'
+      expect(page).not_to have_link 'Logout'
     end
   end
 end
