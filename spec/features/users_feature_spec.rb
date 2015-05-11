@@ -1,21 +1,16 @@
 require 'rails_helper'
+require_relative 'helper/user_management'
 
 feature 'User management system' do
   context 'user is not signed in' do
-    it 'should see sign in and sign up links' do
+    it 'sees sign in and sign up links' do
       visit '/'
       expect(page).to have_link 'Sign in'
       expect(page).to have_link 'Sign up'
     end
 
     it 'user can sign in' do
-      visit '/'
-      click_link 'Sign up'
-      fill_in 'Username', with: 'MahhIDunno'
-      fill_in 'Email', with: 'somebody@someplace.ie'
-      fill_in 'Password', with: 'moomoocow'
-      fill_in 'Password confirmation', with: 'moomoocow'
-      click_button 'Sign up'
+      user_sign_up
       click_link 'Logout'
       click_link 'Sign in'
       fill_in 'Email', with: 'somebody@someplace.ie'
@@ -27,13 +22,7 @@ feature 'User management system' do
 
   context 'user is signed in' do
     before do
-      visit '/'
-      click_link 'Sign up'
-      fill_in 'Username', with: 'MahhIDunno'
-      fill_in 'Email', with: 'somebody@someplace.ie'
-      fill_in 'Password', with: 'moomoocow'
-      fill_in 'Password confirmation', with: 'moomoocow'
-      click_button 'Sign up'
+      user_sign_up
     end
 
     scenario 'user logs out' do

@@ -1,4 +1,5 @@
 require 'rails_helper'
+require_relative 'helper/user_management'
 
 feature 'list of languages' do
   context 'with languages in the database' do
@@ -28,10 +29,18 @@ feature 'list of languages' do
   end
 
   context 'groups users by language' do
+    before do
+      user_sign_up
+      visit '/'
+      click_link 'My Profile'
+      click_link 'Add Language'
+      click_link 'Add Ruby'
+    end
+
     scenario 'show users learning a particular language' do
-      visit '/languages'
+      visit '/'
       click_link 'Ruby'
-      expect(page).to have_content 'test@test.com'
+      expect(page).to have_content 'MahhIDunno'
     end
   end
 end
