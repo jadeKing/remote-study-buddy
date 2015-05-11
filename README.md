@@ -1,7 +1,8 @@
 ### StudyBuddies ###
+#### No Nuts Here! ####
 Remote Study Buddy Project for Makerthon
 
-
+```
 In order to learn programming
 As a user of the website
 I want to Login, with g+?
@@ -25,3 +26,4 @@ I want to
 In order to help find a study buddy
 As a user
 I want to be able to search by course or books im using
+```
