@@ -1,0 +1,3 @@
+<%= Language.all.each do |language| %>
+  <%= link_to "Add #{language.name}", user_languages_path(language), method: :post %>
+<% end %>
