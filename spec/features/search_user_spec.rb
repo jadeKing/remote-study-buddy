@@ -26,4 +26,12 @@ feature 'list of languages' do
       expect(page).to have_link 'Ruby'
     end
   end
+
+  context 'groups users by language' do
+    scenario 'show users learning a particular language' do
+      visit '/languages'
+      click_link 'Ruby'
+      expect(page).to have_content 'test@test.com'
+    end
+  end
 end
