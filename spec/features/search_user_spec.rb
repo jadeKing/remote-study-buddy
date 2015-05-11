@@ -31,6 +31,7 @@ feature 'list of languages' do
   context 'groups users by language' do
     before do
       user_sign_up
+      Language.create(name: 'Ruby')
       visit '/'
       click_link 'My Profile'
       click_link 'Add Language'
