@@ -1,6 +1,6 @@
-<%= link_to 'Beginners', url: request.original_url, skill_level: 'Beginner' %>
-<%= link_to 'Intermediates', url: request.original_url, skill_level: 'Intermediate' %>
-<%= link_to 'Experts', url: request.original_url, skill_level: 'Expert' %>
+<%= link_to 'Beginners', skill_level: 'beginner' %>
+<%= link_to 'Intermediates', skill_level: 'intermediate' %>
+<%= link_to 'Experts', skill_level: 'expert' %>
 <ul>
   <% @language_users.each do |user| %>
     <li><%= link_to user.username, user_path(user) %></li>

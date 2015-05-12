@@ -64,9 +64,9 @@ feature 'list of languages' do
                             password_confirmation: 'testtest')
 
         ruby = Language.where(name: 'Ruby').first
-        user.user_languages.create(language: ruby, skill_level: 'Beginner')
-        user2.user_languages.create(language: ruby, skill_level: 'Intermediate')
-        user3.user_languages.create(language: ruby, skill_level: 'Expert')
+        user.user_languages.create(language: ruby, skill_level: 'beginner')
+        user2.user_languages.create(language: ruby, skill_level: 'intermediate')
+        user3.user_languages.create(language: ruby, skill_level: 'expert')
       end
 
       scenario 'default shows all skill levels' do
