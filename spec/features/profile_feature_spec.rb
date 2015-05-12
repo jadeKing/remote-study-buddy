@@ -16,4 +16,19 @@ feature 'user profiles' do
     click_link 'My Profile'
     expect(page).to have_content 'MahhIDunno'
   end
+
+  it 'displays a users chosen languages' do
+    Language.create(name: 'Ruby')
+    Language.create(name: 'Java')
+    visit '/'
+    click_link 'My Profile'
+    click_link 'Add Language'
+    click_button 'Add Ruby'
+    click_link 'My Profile'
+    click_link 'Add Language'
+    click_button 'Add Java'
+    click_link 'My Profile'
+    expect(page).to have_content 'Ruby'
+    expect(page).to have_content 'Java'
+  end
 end

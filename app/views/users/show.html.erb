@@ -1,2 +1,9 @@
 <%= current_user.username %>
 <%= link_to 'Add Language', new_user_language_path %>
+<ul>
+<% current_user.languages.each do |language| %>
+  <li>
+    <%= language.name %>
+  </li>
+<% end %>
+</ul>

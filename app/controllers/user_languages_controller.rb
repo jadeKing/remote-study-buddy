@@ -3,7 +3,11 @@ class UserLanguagesController < ApplicationController
   end
 
   def create
-    @user_language = UserLanguage.first_or_create(language_id: params[:language_id], user_id: current_user.id)
+    @user_language = UserLanguage.where(language_id: params[:language_id], user_id: current_user.id)
+
+    unless @user_language.first
+      UserLanguage.create(language_id: params[:language_id], user_id: current_user.id)
+    end
     redirect_to '/'
   end
 end
