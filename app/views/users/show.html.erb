@@ -1,9 +1,15 @@
-<%= current_user.username %>
-<%= link_to 'Add Language', new_user_language_path %>
+<%= @profile_user.username %>
+<% if current_user == @profile_user %>
+  <%= link_to 'Add Language', new_user_language_path %>
+<% end %>
 <ul>
-<% current_user.languages.each do |language| %>
+<% @profile_user.languages.each do |language| %>
   <li>
     <%= language.name %>
   </li>
 <% end %>
 </ul>
+
+<% if current_user %>
+  contact: <%= @profile_user.email %>
+<% end %>

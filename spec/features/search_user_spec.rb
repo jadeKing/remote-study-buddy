@@ -38,10 +38,12 @@ feature 'list of languages' do
       click_button 'Add Ruby'
     end
 
-    scenario 'show users learning a particular language' do
+    scenario 'show users learning a particular language and link to their profiles' do
       visit '/'
       click_link 'Ruby'
-      expect(page).to have_content 'MahhIDunno'
+      expect(page).to have_link 'MahhIDunno'
+      click_link 'MahhIDunno'
+      expect(page).to have_content 'somebody@someplace.ie'
     end
   end
 end
