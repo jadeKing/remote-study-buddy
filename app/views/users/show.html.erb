@@ -1,11 +1,13 @@
 <%= @profile_user.username %>
 <% if current_user == @profile_user %>
   <%= link_to 'Add Language', new_user_language_path %>
+  <%= link_to 'Add Bio', edit_user_path %>
 <% end %>
 <ul>
 <% @profile_user.languages.each do |language| %>
   <li>
     <%= language.name %>
+    <%= @profile_user.user_languages.find_by(language_id: language.id).skill_level %>
   </li>
 <% end %>
 </ul>
@@ -13,3 +15,5 @@
 <% if current_user %>
   contact: <%= mail_to @profile_user.email %>
 <% end %>
+
+<div>bio: <%= @profile_user.bio %></div>

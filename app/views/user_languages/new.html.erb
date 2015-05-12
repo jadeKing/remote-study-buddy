@@ -1,14 +1,13 @@
-<%= form_for UserLanguage.new do |f| %>
-  <%= radio_button_tag :skill_level, 'beginner', checked: true %>
-  <%= label_tag :skill_level_beginner, 'Beginner' %>
-  <%= radio_button_tag :skill_level, 'intermediate' %>
-  <%= label_tag :skill_level_intermediate, 'Intermediate' %>
-  <%= radio_button_tag :skill_level, 'expert' %>
-  <%= label_tag :skill_level_expert, 'Expert' %>
-  <ul>
-    <% Language.all.each do |language| %>
-      <li><%= hidden_field_tag :language_id, language.id %>
-      <%= submit_tag "Add #{language.name}" %></li>
-    <% end %>
-  </ul>
+<% Language.all.each do |language| %>
+  <%= form_for UserLanguage.new do |f| %>
+    <%= radio_button_tag :skill_level, 'beginner', checked: true %>
+    <%= label_tag :skill_level_beginner, 'Beginner' %>
+    <%= radio_button_tag :skill_level, 'intermediate' %>
+    <%= label_tag :skill_level_intermediate, 'Intermediate' %>
+    <%= radio_button_tag :skill_level, 'expert' %>
+    <%= label_tag :skill_level_expert, 'Expert' %>
+
+    <%= hidden_field_tag :language_id, language.id %>
+    <%= submit_tag "Add #{language.name}" %>
+  <% end %>
 <% end %>
