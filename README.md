@@ -37,6 +37,9 @@ In order to judge other users
 As a user
 I want to see what languages people know on their profile
 
+####################### TO DO #####################
+User profile - Bio, spoken languages
+
 In order to judge other users
 As a user
 I want to see a bio
@@ -75,13 +78,10 @@ I want to be able provide international language options
 ```
 Tasks
 -----
-
-1. Languages learnt on profiles
+0. Make username link to profile
+1. Languages learnt on profiles:: DONE
 2. Bio on profile
 3. Share email address / send email
-4. See previous work
-
-
-
-
-
+4. See previous work - link to github...
+5. Users links need to link to their own profile
+6. Move language buttons/drop down to profile page
