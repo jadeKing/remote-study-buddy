@@ -1,5 +1,5 @@
 <ul>
   <% @language_users.each do |user| %>
-    <li><%= user.username %></li>
+    <li><a href="/users/<%= user.id %>/profile"><%= user.username %></a></li>
   <% end %>
 </ul>
