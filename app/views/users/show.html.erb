@@ -11,5 +11,5 @@
 </ul>
 
 <% if current_user %>
-  contact: <%= @profile_user.email %>
+  contact: <%= mail_to @profile_user.email %>
 <% end %>
