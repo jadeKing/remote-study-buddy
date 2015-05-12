@@ -39,6 +39,17 @@ feature 'user profiles' do
     expect(page).to have_content 'intermediate'
   end
 
+  it 'defaults user skill level for the given language to ‘beginner’' do
+    Language.create(name: 'Ruby')
+    visit '/'
+    click_link 'My Profile'
+    click_link 'Add Language'
+    click_button 'Add Ruby'
+    click_link 'My Profile'
+    expect(page).to have_content 'Ruby'
+    expect(page).to have_content 'beginner'
+  end
+
   it 'only displays add language on current user profile' do
     user = User.all.first.id
     click_link 'Logout'
