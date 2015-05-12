@@ -36,7 +36,7 @@ feature 'user profiles' do
     click_button 'Add Ruby'
     click_link 'My Profile'
     expect(page).to have_content 'Ruby'
-    expect(page).to have_content 'Intermediate'
+    expect(page).to have_content 'intermediate'
   end
 
   it 'defaults user skill level for the given language to ‘beginner’' do
