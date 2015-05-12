@@ -3,7 +3,7 @@
   <%= link_to 'Add Language', new_user_language_path %>
   <%= link_to 'Add Bio', edit_user_path %>
 <% end %>
-<ul>
+<ul class="list-unstyled">
 <% @profile_user.languages.each do |language| %>
   <li>
     <%= language.name %>
