@@ -78,10 +78,13 @@ I want to be able provide international language options
 ```
 Tasks
 -----
-0. Make username link to profile
+0. Make username link to profile:: DONE
 1. Languages learnt on profiles:: DONE
 2. Bio on profile
-3. Share email address / send email
-4. See previous work - link to github...
+3. Share email address:: DONE / send email
+4. See previous work - link to github…
 5. Users links need to link to their own profile
 6. Move language buttons/drop down to profile page
+7. Nav links need fixing
+8. Need info on index
+9. Skill levels
