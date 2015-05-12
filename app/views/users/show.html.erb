@@ -1,6 +1,7 @@
 <%= @profile_user.username %>
 <% if current_user == @profile_user %>
   <%= link_to 'Add Language', new_user_language_path %>
+  <%= link_to 'Add Bio', edit_user_path %>
 <% end %>
 <ul>
 <% @profile_user.languages.each do |language| %>
@@ -14,3 +15,5 @@
 <% if current_user %>
   contact: <%= mail_to @profile_user.email %>
 <% end %>
+
+<%= @profile_user.bio %>

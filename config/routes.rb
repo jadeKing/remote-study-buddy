@@ -4,7 +4,7 @@ Rails.application.routes.draw do
   resources :languages
 
   devise_for :users
-  resources :users, only: [:show]
+  resources :users, only: [:show, :edit, :update]
   resources :user_languages
 
   # The priority is based upon order of creation: first created -> highest priority.

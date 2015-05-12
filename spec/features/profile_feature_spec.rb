@@ -61,14 +61,12 @@ feature 'user profiles' do
     expect(page).to have_content 'contact: somebody@someplace.ie'
   end
 
-
-
-
-
-
-
-
-
-
-
+  it 'can add a biography field to its profile page' do
+    click_link 'My Profile'
+    click_link 'Add Bio'
+    fill_in 'user_bio', with: 'I am a super smarty-pants!'
+    click_button 'Add Bio'
+    click_link 'My Profile'
+    expect(page).to have_content 'I am a super smarty-pants!'
+  end
 end
