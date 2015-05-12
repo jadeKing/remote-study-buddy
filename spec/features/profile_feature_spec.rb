@@ -3,13 +3,7 @@ require_relative 'helper/user_management'
 
 feature 'user profiles' do
   before do
-    visit '/'
-    click_link 'Sign up'
-    fill_in 'Username', with: 'MahhIDunno'
-    fill_in 'Email', with: 'somebody@someplace.ie'
-    fill_in 'Password', with: 'moomoocow'
-    fill_in 'Password confirmation', with: 'moomoocow'
-    click_button 'Sign up'
+    user_sign_up
   end
 
   it 'displays username' do
@@ -31,6 +25,18 @@ feature 'user profiles' do
     click_link 'My Profile'
     expect(page).to have_content 'Ruby'
     expect(page).to have_content 'Java'
+  end
+
+  it 'displays user skill level for the given language' do
+    Language.create(name: 'Ruby')
+    visit '/'
+    click_link 'My Profile'
+    click_link 'Add Language'
+    choose 'skill_level_intermediate'
+    click_button 'Add Ruby'
+    click_link 'My Profile'
+    expect(page).to have_content 'Ruby'
+    expect(page).to have_content 'intermediate'
   end
 
   it 'only displays add language on current user profile' do
