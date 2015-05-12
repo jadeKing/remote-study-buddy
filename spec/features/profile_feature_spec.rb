@@ -36,7 +36,7 @@ feature 'user profiles' do
     click_button 'Add Ruby'
     click_link 'My Profile'
     expect(page).to have_content 'Ruby'
-    expect(page).to have_content 'intermediate'
+    expect(page).to have_content 'Intermediate'
   end
 
   it 'only displays add language on current user profile' do

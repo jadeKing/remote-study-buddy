@@ -16,5 +16,8 @@ class LanguagesController < ApplicationController
 
   def show
     @language_users = Language.find(params[:id]).users
+    if params[:skill_level]
+      @language_users = User.includes(:user_languages).where(user_languages: {language_id: params[:id], skill_level: params[:skill_level]})
+    end
   end
 end
